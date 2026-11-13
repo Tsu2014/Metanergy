@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 from dotenv import load_dotenv
 
-DEFAULT_HOST = "192.168.30.1"
+DEFAULT_HOST = "192.168.30.220"
 DEFAULT_PORT = 1433
 DEFAULT_USER = "sa"
 DEFAULT_DATABASE = "master"

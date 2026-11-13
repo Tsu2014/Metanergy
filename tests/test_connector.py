@@ -29,7 +29,7 @@ def make_connector(mock_pymssql, config):
 class TestConfig:
     def test_defaults(self):
         cfg = SqlServerConfig()
-        assert (cfg.host, cfg.port, cfg.user) == ("192.168.30.1", 1433, "sa")
+        assert (cfg.host, cfg.port, cfg.user) == ("192.168.30.220", 1433, "sa")
         assert cfg.database == "master"
 
     def test_from_env(self, monkeypatch):
@@ -41,7 +41,7 @@ class TestConfig:
 
     def test_from_dotenv_file(self, tmp_path):
         env = tmp_path / "test.env"
-        env.write_text("SQLSERVER_HOST=192.168.30.1\nSQLSERVER_PASSWORD=test.888\n")
+        env.write_text("SQLSERVER_HOST=192.168.30.220\nSQLSERVER_PASSWORD=test.888\n")
         old = os.environ.pop("SQLSERVER_PASSWORD", None)
         try:
             cfg = SqlServerConfig.from_env(str(env))

@@ -4,7 +4,7 @@ SQL Server 连接器（Python，基于 pymssql）。
 
 默认连接配置：
 
-- 服务器：`192.168.30.1`，端口 `1433`
+- 服务器：`192.168.30.220`，端口 `1433`
 - 账号：`sa`，密码通过 `.env` 中的 `SQLSERVER_PASSWORD` 配置
 - 默认数据库：`master`
 
@@ -19,7 +19,7 @@ cp .env.example .env   # 然后编辑 .env 填入密码等配置
 
 | 环境变量 | 默认值 | 说明 |
 | --- | --- | --- |
-| `SQLSERVER_HOST` | `192.168.30.1` | 服务器地址 |
+| `SQLSERVER_HOST` | `192.168.30.220` | 服务器地址 |
 | `SQLSERVER_PORT` | `1433` | 端口 |
 | `SQLSERVER_USER` | `sa` | 登录账号 |
 | `SQLSERVER_PASSWORD` | （空） | 登录密码 |
@@ -58,7 +58,7 @@ with SqlServerConnector() as db:
 ```python
 from sqlserver_connector import SqlServerConfig, SqlServerConnector
 
-cfg = SqlServerConfig(host="192.168.30.1", port=1433, user="sa",
+cfg = SqlServerConfig(host="192.168.30.220", port=1433, user="sa",
                       password="...", database="mydb")
 db = SqlServerConnector(cfg)
 # 或：SqlServerConnector(database="mydb")，其余取 .env / 环境变量
